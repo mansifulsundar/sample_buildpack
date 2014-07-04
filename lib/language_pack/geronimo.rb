@@ -31,7 +31,7 @@ module LanguagePack
         copy_webapp_to_geronimo
         move_geronimo_to_root
         
-       #setup_profiled
+       setup_profiled
        #files=Dir.glob("*")
        #puts "****"
       # puts files
@@ -84,8 +84,9 @@ module LanguagePack
     
     
     def setup_profiled
-      File.open("#{build_path}/start.sh", "a") { |file| file.puts(bash_script) }
-       File.chmod(755, "#{build_path}/start.sh")
+      File.open("#{build_path}/start.sh", "a") { |file| file.puts(bash_script) 
+      file.chmod(0755)}
+       #File.chmod(755, "#{build_path}/start.sh")
     end
 
 
