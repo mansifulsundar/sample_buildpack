@@ -30,14 +30,14 @@ module LanguagePack
         install_geronimo
         copy_webapp_to_geronimo
         move_geronimo_to_root
-        puts org.apache.geronimo.config.substitution.hostName
-       #setup_profiled
+        
+       setup_profiled
        #files=Dir.glob("*")
        #puts "****"
       # puts files
-       #File.chmod(755, "start.sh")
+       
       end
-      
+     
     end
    
     def install_geronimo
@@ -83,7 +83,23 @@ module LanguagePack
     end
     
     
-    
+    def setup_profiled
+      File.open("#{build_path}/start.sh", "a") { |file| file.puts(bash_script) }
+       File.chmod(755, "#{build_path}/start.sh")
+    end
+
+
+    def bash_script
+      <<-BASH
+#!/bin/bash
+echo "*****Starting Geronimo Application Server"
+export GERONIMO_OPTS="-Dorg.apache.geronimo.config.substitution.HTTPPort=$PORT"
+echo "*****Port is"
+echo $PORT
+./bin/geronimo.sh
+BASH
+    end
+
 
    
    
