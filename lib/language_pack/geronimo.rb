@@ -92,7 +92,7 @@ module LanguagePack
       <<-BASH
 #!/bin/bash
 echo "Starting Geronimo Application Server"
-export GERONIMO_OPTS="-Dorg.apache.geronimo.config.substitution.HTTPPort=$PORT"
+export GERONIMO_OPTS="org.apache.geronimo.config.substitution.HTTPPort=$PORT"
 ./bin/geronimo.sh
 BASH
     end
