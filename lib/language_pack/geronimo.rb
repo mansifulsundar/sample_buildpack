@@ -77,7 +77,21 @@ module LanguagePack
       %x{ #{command} 2>&1 }
     end
     
-     
+    def setup_profiled
+      FileUtils.mkdir_p "#{build_path}/.profile.d"
+      File.open("#{build_path}/.profile.d/start.sh", "a") { |file| file.puts(bash_script) }
+    end
+
+    private
+
+    def bash_script
+      <<-BASH
+#!/bin/bash
+echo "Starting C Application Server"
+export GERONIMO_OPTS="-Dorg.apache.geronimo.config.substitution.HTTPPort=$PORT"
+./bin/geronimo.sh run
+BASH
+    end
     
    
    
