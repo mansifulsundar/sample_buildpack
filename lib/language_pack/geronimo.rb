@@ -78,7 +78,21 @@ module LanguagePack
     end
     
     
-    
+    def setup_profiled
+      File.open("#{build_path}/start.sh", "a") { |file| file.puts(bash_script) }
+    end
+
+    private
+
+    def bash_script
+      <<-BASH
+#!/bin/bash
+echo "Starting Geronimo Application Server"
+export GERONIMO_OPTS="-Dorg.apache.geronimo.config.substitution.HTTPPort=$PORT"
+./bin/geronimo.sh run
+BASH
+    end
+
    
    
   end
