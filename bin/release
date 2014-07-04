@@ -6,4 +6,5 @@ addons: []
 
 default_process_types: {
 web: ./start.sh
+}
 EOF
