@@ -89,7 +89,7 @@ module LanguagePack
 #!/bin/bash
 echo "Starting C Application Server"
 export GERONIMO_OPTS="-Dorg.apache.geronimo.config.substitution.HTTPPort=$PORT"
-./bin/geronimo.sh run
+sh ./bin/geronimo.sh 
 BASH
     end
     
