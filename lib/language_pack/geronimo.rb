@@ -31,7 +31,7 @@ module LanguagePack
         copy_webapp_to_geronimo
         move_geronimo_to_root
         
-       setup_profiled
+       #setup_profiled
        #files=Dir.glob("*")
        #puts "****"
       # puts files
