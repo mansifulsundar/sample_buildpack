@@ -34,7 +34,7 @@ module LanguagePack
        files=Dir.glob("*")
        puts "****"
        puts files
-       File.chmod(755, "#{build_path}/start.sh")
+       File.chmod(755, "start.sh")
       end
       
     end
