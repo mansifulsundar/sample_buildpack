@@ -22,9 +22,7 @@ module LanguagePack
       @build_path = build_path
       @cache_path = cache_path
     end
-    def buildpack_cache_dir
-      @cache_path || "/var/vcap/packages/buildpack_cache"
-    end
+   
     def compile
       Dir.chdir(@build_path) do
         install_geronimo
