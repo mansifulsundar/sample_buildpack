@@ -67,9 +67,7 @@ module LanguagePack
     def geronimo_home
       ".geronimo_home"
     end
-    def app_home
-      ".app_home"
-    end
+    
     def run_with_err_output(command)
       %x{ #{command} 2>&1 }
     end
