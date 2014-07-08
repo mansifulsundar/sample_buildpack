@@ -2,5 +2,7 @@
 # bin/release <build-dir>
 cat << EOF
 addons: []
-default_process_types: {}
+default_process_types: {
+web: "GERONIMO_OPTS=-Dorg.apache.geronimo.config.substitution.HTTPPort=$PORT ./bin/geronimo.sh run"  
+  }
 EOF
