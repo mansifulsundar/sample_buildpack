@@ -44,11 +44,14 @@ module LanguagePack
        puts "(#{(Time.now - download_start_time).duration})"
        puts "------->Unpacking Geronimo"
        download_start_time = Time.now
+       #unzip geronimo package in geronimo_home
        system "unzip -oq -d #{geronimo_home} #{filename} 2>&1"
+       #move contents of geronimo zip to geronimo_home
        run_with_err_output("mv #{geronimo_home}/geronimo-tomcat*/* #{geronimo_home} && " + "rm -rf #{geronimo_home}/geronimo-tomcat*")
+       # delete downloaded zip as we have extracted it now. So the size of droplet will get reduced 
        run_with_err_output("rm -rf geronimo.zip")
        puts "(#{(Time.now - download_start_time).duration})"
-        
+        #check for geronimo.sh if available means you have downloaded geronimo successfully
        unless File.exists?("#{geronimo_home}/bin/geronimo.sh")
          puts "Unable to retrieve Geronimo"
          exit 1
@@ -58,9 +61,11 @@ module LanguagePack
     def geronimo_config
       YAML.load_file(File.expand_path(GERONIMO_CONFIG))
     end
+    #create deploy folder in geronimo_home for hot deployment
     def copy_webapp_to_geronimo
         run_with_err_output("mkdir -p #{geronimo_home}/deploy && mv * #{geronimo_home}/deploy")
     end
+    
     def move_geronimo_to_root
       run_with_err_output("mv #{geronimo_home}/* . && rm -rf #{geronimo_home}")
     end
