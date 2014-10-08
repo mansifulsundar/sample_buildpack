@@ -1,4 +1,4 @@
 ---
-repository_root: "http://www.apache.org/dyn/closer.cgi/geronimo/3.0.1/"
-filename: "geronimo-3.0.1-source-release.zip"
+repository_root: "http://www.apache.org/dyn/closer.cgi/geronimo/2.2.1/"
+filename: "geronimo-tomcat6-javaee5-2.2.1-bin.zip"
 version: 2.1
