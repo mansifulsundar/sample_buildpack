@@ -46,7 +46,7 @@ module LanguagePack
        puts "------->Unpacking Geronimo"
        download_start_time = Time.now
        #unzip geronimo package in geronimo_home
-       system "unzip #{geronimo_home} #{filename} 2>&1"
+       system "unzip -qq -d #{geronimo_home} #{filename} 2>&1"
        #move contents of geronimo zip to geronimo_home
        run_with_err_output("mv #{geronimo_home}/geronimo-tomcat*/* #{geronimo_home} && " + "rm -rf #{geronimo_home}/geronimo-tomcat*")
        # delete downloaded zip as we have extracted it now. So the size of droplet will get reduced 
