@@ -40,8 +40,8 @@ module LanguagePack
        filename = geronimo_config["filename"]
        puts "------->Downloading #{filename}  from #{geronimo_package}"
        download_start_time = Time.now
-       #system("curl #{geronimo_package}/#{filename} -s -o #{filename}")
-       system("curl http://www.apache.org/dyn/closer.cgi/geronimo/3.0.1/geronimo-tomcat7-javaee6-3.0.1-bin.zip -s -o #{filename}")
+       system("curl #{geronimo_package}/#{filename} -s -o #{filename}")
+       #system("curl http://www.apache.org/dyn/closer.cgi/geronimo/3.0.1/geronimo-tomcat7-javaee6-3.0.1-bin.zip -s -o #{filename}")
        puts "(#{(Time.now - download_start_time).duration})"
        puts "------->Unpacking Geronimo"
        download_start_time = Time.now
