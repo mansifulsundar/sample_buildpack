@@ -50,7 +50,7 @@ module LanguagePack
        #move contents of geronimo zip to geronimo_home
        run_with_err_output("mv #{geronimo_home}/geronimo-tomcat*/* #{geronimo_home} && " + "rm -rf #{geronimo_home}/geronimo-tomcat*")
        # delete downloaded zip as we have extracted it now. So the size of droplet will get reduced 
-       run_with_err_output("rm -rf geronimo.zip")
+       run_with_err_output("rm -rf #{filename}")
        puts "(#{(Time.now - download_start_time).duration})"
         #check for geronimo.sh if available means you have downloaded geronimo successfully
        unless File.exists?("#{geronimo_home}/bin/geronimo.sh")
