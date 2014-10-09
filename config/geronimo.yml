@@ -1,4 +1,4 @@
 ---
-repository_root: "http://apache.mirrors.hoobly.com/geronimo/2.2.1/"
+repository_root: "http://172.31.42.137/geronimozip"
 filename: "geronimo-tomcat6-javaee5-2.2.1-bin.zip"
 version: 2.1
