@@ -1,4 +1,4 @@
 ---
-repository_root: "http://apache.cs.utah.edu/geronimo/3.0.1/"
-filename: "geronimo-tomcat7-javaee6-web-3.0.1-bin.zip"
+repository_root: "http://apache.mirrors.hoobly.com/geronimo/2.2.1/"
+filename: "geronimo-tomcat6-javaee5-2.2.1-bin.zip"
 version: 2.1
